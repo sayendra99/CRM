@@ -1,0 +1,19 @@
+project_id = "barbon-crm"
+
+[api]
+enabled = true
+
+[db]
+major_version = 15
+
+[auth]
+enabled = true
+
+[functions.health]
+verify_jwt = false
+
+[functions.readiness]
+verify_jwt = false
+
+[functions.backup-smoke-test]
+verify_jwt = true

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "barbon-crm",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/private/tmp/claude-502/-Users-barbonstudios-Library-CloudStorage-Dropbox-Custom-CRM-App/a3e8bf4b-559a-45d5-ae30-d87a753ab290/scratchpad/barbon-crm/serve.py"],
+      "port": 4173
+    }
+  ]
+}

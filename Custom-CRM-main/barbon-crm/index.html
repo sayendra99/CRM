@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <title>Barbon Media Group CRM</title>
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Instagram outreach CRM for Barbon Media Group" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./assets/icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Barbon CRM" />
+  <link rel="stylesheet" href="./css/app.css" />
+  <!-- Resolve the bare "preact" import used inside preact/hooks, all vendored locally -->
+  <script type="importmap">
+  {
+    "imports": {
+      "preact": "./vendor/preact.module.js",
+      "preact/hooks": "./vendor/hooks.module.js",
+      "htm": "./vendor/htm.module.js"
+    }
+  }
+  </script>
+  <!-- Set theme before first paint to avoid a flash -->
+  <script>
+    try {
+      var saved = JSON.parse(localStorage.getItem('barbon-crm-v1') || '{}');
+      var t = (saved.settings && saved.settings.theme) || 'system';
+      var dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+      var de = document.documentElement;
+      de.setAttribute('data-theme', dark ? 'dark' : 'light');
+      de.setAttribute('data-glass', (saved.settings && saved.settings.glassMode) ? 'on' : 'off');
+      // Apply the active workspace's palette before first paint (no colour flash).
+      var PAL = {
+        'violet': ['91,87,235', '#7c6cff', '#5b57eb'], 'muted-dusk': ['198,95,150', '#d98ec9', '#e0955a'],
+        'nightshade': ['176,54,104', '#e08ac0', '#3a1e08'], 'fernway': ['132,92,196', '#c979d6', '#4a7a4a'],
+        'cloudlifter': ['99,127,196', '#a9c0dd', '#e0c3d8'], 'grasshopper': ['180,92,50', '#d9784a', '#35502a'],
+        'inkblot': ['162,34,98', '#1f5a52', '#b5651d'], 'gumdrop': ['63,107,200', '#1f6fc0', '#d06ab0'],
+        'almond-flour': ['128,114,164', '#c3c6da', '#edd3d0'], 'strawberry-guava': ['196,86,128', '#d96a95', '#6f6a1e'],
+        'nocturne': ['124,78,138', '#2a1f5e', '#6a5a10']
+      };
+      var ws = (saved.workspaces || []).filter(function (w) { return w.id === saved.activeWs; })[0] || (saved.workspaces || [])[0];
+      var pal = PAL[(ws && ws.palette)] || PAL[ws && ws.id === 'ws_sa' ? 'gumdrop' : 'muted-dusk'] || PAL.violet;
+      de.style.setProperty('--accent', pal[0]);
+      de.style.setProperty('--grad-a', pal[1]);
+      de.style.setProperty('--grad-b', pal[2]);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="./js/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js').catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>

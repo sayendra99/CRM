@@ -1,0 +1,10 @@
+# New Next.js application artifacts and local credentials.
+web/.next/
+web/out/
+web/node_modules/
+web/.env.local
+web/.env.*.local
+
+# Supabase local CLI state and generated artifacts.
+supabase/.branches/
+supabase/.temp/

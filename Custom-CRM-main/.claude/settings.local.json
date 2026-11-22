@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -lat ~/Downloads/*.json ~/Downloads/barbon* ~/Downloads/*crm* 2>/dev/null | head -20; echo \"---csv---\"; ls -lat ~/Downloads/*.csv 2>/dev/null | head -10)",
+      "Bash(ls -lat ~/Desktop/*.json ~/Desktop/barbon* \"/Users/barbonstudios/Library/CloudStorage/Dropbox/Custom CRM App/\"*.json 2>/dev/null | head; echo \"--- any recent barbon json anywhere obvious ---\"; find ~/Downloads ~/Desktop \"/Users/barbonstudios/Library/CloudStorage/Dropbox/Custom CRM App\" -maxdepth 2 -iname \"*barbon-crm*\" -o -maxdepth 2 -iname \"*crm-backup*\" 2>/dev/null | head)",
+      "Bash(echo \"=== Search for the named files anywhere obvious ===\" *)",
+      "Bash(rm -rf '/Users/barbonstudios/Library/Application Support/BarbonCRM/barbon-crm/js' '/Users/barbonstudios/Library/Application Support/BarbonCRM/barbon-crm/css')",
+      "Bash(cp -R '/Users/barbonstudios/Library/CloudStorage/Dropbox-BarbonMediaGroup/Reuvie Barbon/Custom CRM App/barbon-crm/js' '/Users/barbonstudios/Library/Application Support/BarbonCRM/barbon-crm/js')",
+      "Bash(cp -R '/Users/barbonstudios/Library/CloudStorage/Dropbox-BarbonMediaGroup/Reuvie Barbon/Custom CRM App/barbon-crm/css' '/Users/barbonstudios/Library/Application Support/BarbonCRM/barbon-crm/css')",
+      "Bash(cp '/Users/barbonstudios/Library/CloudStorage/Dropbox-BarbonMediaGroup/Reuvie Barbon/Custom CRM App/barbon-crm/barbon-crm-backup wed 23.09.26.json' '/Users/barbonstudios/Library/Application Support/BarbonCRM/barbon-crm/_test_v2.json')",
+      "Bash(curl -s -o /dev/null -w \"server -> %{http_code}\\\\n\" http://127.0.0.1:4173/)",
+      "Bash(curl -sI \"http://127.0.0.1:4173/sw.js\")",
+      "Bash(rm -f \"/Users/barbonstudios/Library/Application Support/BarbonCRM/barbon-crm/_test_v2.json\"; echo \"removed test file\" *)",
+      "Read(//Users/barbonstudios/.claude/projects/**)",
+      "Bash(mkdir -p /Users/barbonstudios/.claude/projects/-Users-barbonstudios-Library-CloudStorage-Dropbox-BarbonMediaGroup-Reuvie-Barbon-Custom-CRM-App/memory)",
+      "Bash(cp /Users/barbonstudios/.claude/projects/-Users-barbonstudios-Library-CloudStorage-Dropbox-Custom-CRM-App/memory/*.md /Users/barbonstudios/.claude/projects/-Users-barbonstudios-Library-CloudStorage-Dropbox-BarbonMediaGroup-Reuvie-Barbon-Custom-CRM-App/memory/)",
+      "Bash(curl -s http://127.0.0.1:4173/js/views/analytics.js)",
+      "Bash(curl -s http://127.0.0.1:4173/js/store.js)",
+      "Bash(curl -s http://127.0.0.1:4173/js/views/automations.js)"
+    ]
+  }
+}

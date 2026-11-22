@@ -1,0 +1,14 @@
+{
+  "name": "Barbon Media Group CRM",
+  "short_name": "Barbon CRM",
+  "description": "Instagram outreach CRM for property photography prospecting",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0d0d10",
+  "theme_color": "#0d0d10",
+  "icons": [
+    { "src": "./assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
